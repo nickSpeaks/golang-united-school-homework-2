@@ -5,7 +5,7 @@ import (
 )
 
 // Define custom int type to hold sides number and update CalcSquare signature by replacing #yourTypeNameHere#
-type customType int
+type customSideNum int
 
 // Define constants to represent 0, 3 and 4 sides.  Test uses mnemos: SidesTriangle(==3), SidesSquare(==4), SidesCircle(==0)
 // it's like:
@@ -13,13 +13,13 @@ type customType int
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 const (
-	SidesCircle   = 0
-	SidesTriangle = 3
-	SidesSquare   = 4
-	Pi            = 3.141592653589793
+	SidesCircle   customSideNum = 0
+	SidesTriangle customSideNum = 3
+	SidesSquare   customSideNum = 4
+	Pi                          = 3.141592653589793
 )
 
-func CalcSquare(sideLen float64, sidesNum customType) float64 {
+func CalcSquare(sideLen float64, sidesNum customSideNum) float64 {
 	switch sidesNum {
 	case SidesCircle:
 		return Pi * sideLen * sideLen
